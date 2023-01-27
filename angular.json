@@ -64,6 +64,20 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "qa":{
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true ,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -72,10 +86,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "UnderstandingProxy:build:production"
+              "browserTarget": "UnderstandingProxy:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "browserTarget": "UnderstandingProxy:build:development"
+              "browserTarget": "UnderstandingProxy:build:development",
+              "proxyConfig": "src/proxy.conf.json"
+            },
+            "qa":{
+              "browserTarget": "UnderstandingProxy:build:qa",
+              "proxyConfig": "src/proxy.conf.qa.json"
             }
           },
           "defaultConfiguration": "development"

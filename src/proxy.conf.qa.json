@@ -1,0 +1,9 @@
+{
+  "/jsonplaceholder":{
+    "target":"https://jsonplaceholder.typicode.com",
+    "secure":false,
+    "logLevel": "info",
+     "changeOrigin":true,
+    "pathRewrite":{ "^/jsonplaceholder":"" }
+  }
+}

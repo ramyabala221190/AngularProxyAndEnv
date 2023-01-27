@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'UnderstandingProxy';
+
+  constructor(private service:DataService){}
+
+  getData(){
+    this.service.getData().subscribe();
+  }
+
+  getUsers(){
+    this.service.getUsers().subscribe()
+  }
 }
